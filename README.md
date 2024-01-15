@@ -54,17 +54,28 @@ Students will work in small groups to develop an image processing application in
 - Day 3: Finalization of features, thorough testing, documentation, and preparation of the presentation.
 
 ## Dependencies
-Use version 1.3.9 of [fltk](https://github.com/fltk/fltk). Please consult the [fltk documentation](https://www.fltk.org/doc-1.3) while developing.
+Use version 1.3.9 of fltk. Please consult the [fltk documentation](https://www.fltk.org/doc-1.3) while developing.
 
+### Windows with MSYS2
+Install fltk:
 ```
-git clone https://github.com/fltk/fltk.git
-cd fltk
-git checkout release-1.3.9
-make
-make install
+pacman -S mingw-w64-ucrt-x86_64-fltk
 ```
 
-## Run
+Build and run project:
 ```
-./build.sh
+g++ -std=c++17 -o image_processor main.cpp -l fltk_images `fltk-config --cxxflags --ldflags`
+./image_processor
+```
+
+### Mac
+Install fltk:
+```
+brew install fltk
+```
+
+Build and run project:
+```
+g++ -std=c++17 -o image_processor main.cpp -l fltk_images -l fltk_jpeg `fltk-config --cxxflags --ldflags`
+./image_processor
 ```
