@@ -63,3 +63,8 @@ git checkout release-1.3.9
 make
 make install
 ```
+
+## Run
+```
+./build.sh
+```
