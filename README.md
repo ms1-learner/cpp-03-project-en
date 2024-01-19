@@ -16,7 +16,11 @@ g++ -std=c++17 -o image_processor main.cpp -l fltk_images `fltk-config --cxxflag
 ### Mac
 Install fltk:
 ```
-brew install fltk
+git clone git@github.com:fltk/fltk.git
+cd fltk
+git checkout release-1.3.9
+make
+sudo make install
 ```
 
 Build and run project:
